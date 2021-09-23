@@ -2,22 +2,37 @@
 
 ## API Documentation
 [Postman documentation](https://documenter.getpostman.com/view/13371633/TzzGGDLF)
+
 ## Localhost deployment guide
+### Pre-requisites
+1.  JDK 1.8 or later version
+2.  MySQL
+3.  NPM
+4.  AWS S3 Bucket
 
-Requirements:
-    ``AWS S3 Bucket, MySQL, Java 8, NPM``
+### Guide
+Create MySQL database:
+    
+    Database name: reviewia
+    Username: root
+    Password: root
 
-    create mysql database
-        db name: reviewia
-        username: root
-        password: root
+Install mail server:
 
-    Add S3 bucket keys to application.properties
+    npm install -g maildev
 
-    install mail server
-        command: npm install -g maildev
+Add AWS S3 configurations to application.properties file:
+(located in /src/main/resources/application.properties)
 
-    run mail server
-        command: maildev
+    Endpoint url
+    Access key
+    Secret key
+    Bucket name
 
-    run Spring boot app
+Run mail server (run on the terminal):
+
+    maildev
+
+Run the application (run command from inside the project directory):
+
+    mvnw spring-boot:run
