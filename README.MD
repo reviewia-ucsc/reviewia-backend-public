@@ -5,13 +5,14 @@
 ## Localhost deployment guide
 
 Requirements:
-    ``AWS S3 Bucket``
-
+    ``AWS S3 Bucket, MySQL, Java 8, NPM``
 
     create mysql database
         db name: reviewia
         username: root
         password: root
+
+    Add S3 bucket keys to application.properties
 
     install mail server
         command: npm install -g maildev
